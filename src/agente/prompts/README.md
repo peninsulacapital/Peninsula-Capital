@@ -1,7 +1,7 @@
 # prompts
 **Papel:** os textos de instrução enviados ao LLM, um arquivo por tarefa, versionados como código.
 
-**Usado por:** `interpretacao` (extrair dados do texto do cliente, apontar lacunas) e `relatorio` (redigir a tese).
+**Usado por:** `interpretacao` (extrair dados do texto do cliente), `validacao` (redigir a pergunta de esclarecimento), `analista` (redigir os argumentos da tese e a resposta a contestações) e `relatorio` (redigir a apresentação).
 
 **Não vai aqui:** código Python, valores numéricos.
 

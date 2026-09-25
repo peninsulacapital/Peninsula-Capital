@@ -10,3 +10,11 @@
 **Decisões que são de vocês:** o que conta como incoerência, o que é lacuna bloqueante versus contornável, o texto/critério de cada checagem. As regras ficam parametrizadas em `config/`.
 
 **Natureza:** humana — é onde está o diferencial do projeto. **Estado:** vazio.
+
+## Perfil de risco
+`interpretacao` só registra as declarações do cliente sobre risco (perda tolerada, experiência, reação a quedas, preferências). Consolidá-las num perfil é daqui: exige decidir qual declaração prevalece quando elas se contradizem, e só `validacao` pode perguntar ao cliente. As categorias e os critérios do perfil são de vocês — ainda a estruturar.
+
+## Exemplos de checagem (a parametrizar em `config/`)
+- Declarações de risco contraditórias (ex.: patrimônio concentrado em ativo de alto risco e tolerância zero a perda).
+- Números que não fecham (ex.: total declarado pelo cliente vs. soma dos itens).
+- Falta de dado essencial para a análise.

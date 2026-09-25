@@ -1,5 +1,5 @@
 # mercado
-**Papel:** fonte transversal de premissas de mercado. Lê o Excel da banca (`data/raw/`) e as premissas (`config/`) e entrega um objeto único que `financeiro` e `portfolio` consultam.
+**Papel:** fonte transversal de premissas de mercado. Lê o Excel da banca (`data/raw/`) e as premissas (`config/`) e entrega um objeto único que `financeiro` consulta.
 
 **Entra:** planilha e premissas. **Sai:** o objeto de premissas de mercado definido em `schemas`.
 

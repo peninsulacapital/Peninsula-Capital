@@ -32,13 +32,13 @@ Trabalham no projeto duas pessoas mais o Claude. Este arquivo é a fonte de verd
 
 ## Mapa
 
-Pipeline: `interpretacao` ⇄ `validacao` (loop de esclarecimento) → `financeiro` → `portfolio` → `relatorio`.
+Pipeline: `interpretacao` ⇄ `validacao` (loop de esclarecimento) → `financeiro` ⇄ `analista` (loop de decisão) → `relatorio`.
 Transversais: `schemas`, `mercado`, `llm`, `prompts`. Ordem das etapas só em `orquestrador.py`.
 Detalhe de cada caixa no seu próprio README; mapa geral em `src/agente/README.md`.
 
 ## Onde cada um foca
 
-- **Especialistas:** `validacao`, `portfolio`, `config`, `docs/metodologia.md`, `inputs/casos`.
+- **Especialistas:** `validacao`, `analista` (fluxograma de decisão), `config`, `docs/metodologia.md`, `inputs/casos`.
 - **Claude:** `mercado`, `financeiro` (implementação da metodologia dada), `llm`, geração do PDF, testes.
 
 ## Ambiente
@@ -47,9 +47,9 @@ Python 3.11+ (3.14 em uso). `python -m venv .venv`, `.venv\Scripts\pip install -
 
 ## Estado
 
-Esqueleto de pastas montado, **todas as caixas vazias**. Regras da banca transcritas em `docs/regras_banca.md`; planilha histórica recebida em `data/raw/`, ainda não lida por código.
+Esqueleto de pastas montado; caixas do pipeline ainda vazias. Regras da banca transcritas em `docs/regras_banca.md`; planilha histórica recebida em `data/raw/`, ainda não lida por código.
 
-Próximo passo combinado: nenhum até definição conjunta.
+`schemas` tem o perfil do cliente (`ClientProfile`) como estrutura inicial. Próximo passo combinado: integrar o perfil com `interpretacao` via LLM. Proposta feita (ainda sem "pode ir"): prompt de comportamento em `prompts/interpretacao.md`; `llm` com uma função única que devolve o objeto Pydantic validado; `interpretacao` confere em Python regras do schema e se cada trecho existe no texto, devolvendo erros ao LLM para correção. Decisões pendentes: provedor/modelo; comparação do trecho (exata ou ignorando maiúsculas/espaços); o que fazer se o trecho seguir inexistente após as correções (falhar ou descartar como ausente).
 
 # Funções canônicas (uma por andar)
 

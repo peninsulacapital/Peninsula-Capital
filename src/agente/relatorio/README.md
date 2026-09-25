@@ -1,10 +1,10 @@
 # relatorio
 **Papel:** última etapa. Transforma os resultados em uma apresentação em PDF que explica a tese em linguagem natural.
 
-**Entra:** os objetos de resultado das caixas anteriores. **Sai:** o PDF em `outputs/`.
+**Entra:** o plano e a tese do `analista`, com os números que os sustentam. **Sai:** o PDF em `outputs/`.
 
-**Não vai aqui:** cálculo. Nenhum número é produzido nesta caixa; todos chegam prontos.
+**Não vai aqui:** cálculo nem decisão. Nenhum número ou conclusão é produzido nesta caixa; tudo chega pronto.
 
-**Divisão:** a estrutura da apresentação e a linha argumentativa são de vocês; a redação é do LLM restrita aos números recebidos; a geração do arquivo é robótica.
+**Divisão:** a estrutura da apresentação é de vocês; a tese chega pronta do `analista`; a redação é do LLM restrita ao que recebeu; a geração do arquivo é robótica.
 
 **Natureza:** mista. **Estado:** vazio.

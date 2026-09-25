@@ -7,19 +7,12 @@
 
 **Regra dura:** o que o cliente não disse fica marcado como ausente. Nunca preencher por inferência.
 
+**Registra declarações, não classificações:** o que o cliente disse sobre risco, prazos ou valores entra como foi dito, com o trecho literal de origem. Consolidar em perfil de risco é `validacao`; fazer conta é `financeiro`.
+
+**O que extrair:** `ClientProfile`, em `schemas/client_profile.py`.
+
+**A observar:** jargão financeiro pode parecer ambíguo ao LLM sem ser (ex.: "4% em termos reais" = 4% acima da inflação). Por ora vira status `ambiguous` e `validacao` pergunta; se essas perguntas ficarem frequentes demais, buscar alternativa.
+
 **Loop com `validacao`:** quando `validacao` devolve uma pergunta de esclarecimento e o cliente responde, a resposta passa de novo por `interpretacao` antes de voltar a `validacao`.
 
 **Natureza:** LLM, com prompts revisados por vocês. **Estado:** vazio.
-
-## Regras de Inconsistência
-- Se o cliente informar um patrimônio de alto risco, mas declarar zero tolerância a perdas, ou informar números que não batem, marcar o campo `alerta_inconsistencia = true`.
-- Se faltarem dados essenciais para o cálculo, acionar o fluxo de validação (`validacao`).
-
-## Variáveis Extraídas (Entidades)
-- `patrimonio_total`: Valor financeiro informado.
-- `caixa` : patrimonio líquido do cliente
-- `renda` : valor o cliente ganha por ano
-- `gastos` : valor que o cliente gasta por ano
-- `objetivos`: Prazos e metas financeiras.
-- `perfil_risco`: Conservador, Moderado ou Arrojado.
-- `experiência` : histórico de investimentos do cliente.
