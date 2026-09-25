@@ -1,0 +1,235 @@
+{
+  "nome": "exemplo-agente",
+  "versao": "1.0",
+  "descricao": "Agente de exemplo do starter kit. O cliente e a Associacao Nautica Aurora, INVENTADA para demonstrar o formato — nao e o case do Premio.",
+  "funcoes": {
+    "diagnosticar_cliente": {
+      "descricao": "Andar 2: quem e o cliente em numeros, e o que falta saber.",
+      "entrada": {
+        "type": "object",
+        "required": [
+          "pergunta"
+        ],
+        "properties": {
+          "pergunta": {
+            "type": "string"
+          }
+        }
+      },
+      "saida": {
+        "type": "object",
+        "required": [
+          "texto",
+          "fontes",
+          "confianca"
+        ],
+        "properties": {
+          "texto": {
+            "type": "string"
+          },
+          "fontes": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "confianca": {
+            "type": "number",
+            "minimum": 0,
+            "maximum": 1
+          }
+        }
+      }
+    },
+    "diagnosticar_patrimonio": {
+      "descricao": "Andar 3: quanto o cliente pode gastar por ano, para sempre.",
+      "entrada": {
+        "type": "object",
+        "required": [
+          "pergunta"
+        ],
+        "properties": {
+          "pergunta": {
+            "type": "string"
+          }
+        }
+      },
+      "saida": {
+        "type": "object",
+        "required": [
+          "texto",
+          "fontes",
+          "confianca"
+        ],
+        "properties": {
+          "texto": {
+            "type": "string"
+          },
+          "fontes": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "confianca": {
+            "type": "number",
+            "minimum": 0,
+            "maximum": 1
+          }
+        }
+      }
+    },
+    "alocar_carteiras": {
+      "descricao": "Andar 4: as carteiras por classe, com o risco declarado de cada uma.",
+      "entrada": {
+        "type": "object",
+        "required": [
+          "pedido"
+        ],
+        "properties": {
+          "pedido": {
+            "type": "string"
+          }
+        }
+      },
+      "saida": {
+        "type": "object",
+        "required": [
+          "texto",
+          "fontes",
+          "confianca"
+        ],
+        "properties": {
+          "texto": {
+            "type": "string"
+          },
+          "fontes": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "confianca": {
+            "type": "number",
+            "minimum": 0,
+            "maximum": 1
+          }
+        }
+      }
+    },
+    "defender_recomendacao": {
+      "descricao": "Andar 5: sustenta a mesma tese sob contestacao; so muda com evidencia nova.",
+      "entrada": {
+        "type": "object",
+        "required": [
+          "desafio"
+        ],
+        "properties": {
+          "desafio": {
+            "type": "string"
+          }
+        }
+      },
+      "saida": {
+        "type": "object",
+        "required": [
+          "texto",
+          "fontes",
+          "confianca"
+        ],
+        "properties": {
+          "texto": {
+            "type": "string"
+          },
+          "fontes": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "confianca": {
+            "type": "number",
+            "minimum": 0,
+            "maximum": 1
+          }
+        }
+      }
+    },
+    "montar_apresentacao": {
+      "descricao": "Andar 6: os slides que o cliente receberia, na estrutura pedida.",
+      "entrada": {
+        "type": "object",
+        "required": [
+          "pedido"
+        ],
+        "properties": {
+          "pedido": {
+            "type": "string"
+          }
+        }
+      },
+      "saida": {
+        "type": "object",
+        "required": [
+          "texto",
+          "fontes",
+          "confianca"
+        ],
+        "properties": {
+          "texto": {
+            "type": "string"
+          },
+          "fontes": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "confianca": {
+            "type": "number",
+            "minimum": 0,
+            "maximum": 1
+          }
+        }
+      }
+    },
+    "case_surpresa": {
+      "descricao": "Andar 7: o mesmo metodo diante de um cliente que o agente nunca viu.",
+      "entrada": {
+        "type": "object",
+        "required": [
+          "enunciado"
+        ],
+        "properties": {
+          "enunciado": {
+            "type": "string"
+          }
+        }
+      },
+      "saida": {
+        "type": "object",
+        "required": [
+          "texto",
+          "fontes",
+          "confianca"
+        ],
+        "properties": {
+          "texto": {
+            "type": "string"
+          },
+          "fontes": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "confianca": {
+            "type": "number",
+            "minimum": 0,
+            "maximum": 1
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,6 +1,8 @@
 # Agente de Gestão Patrimonial (Prêmio Turim)
 
-Agente de IA em Python: recebe texto livre com a situação patrimonial, objetivos e perfil de risco do cliente; identifica incoerências e informações faltantes; monta um plano e uma carteira com teoria de portfólio; entrega uma apresentação em PDF explicando a tese.
+## 1. Persona e Tom 
+**Função:** Analista de Multi Family office - analisa a situação patrimonial e perfil de risco do cliente, identifica inconsistências ou lacunas nas informações prestadas, elabora uma proposta de alocação e gera a apresentação final de recomendação em PDF. 
+**Comunicação:** objetivo, prestativo e financeiramente didático 
 
 Trabalham no projeto duas pessoas mais o Claude. Este arquivo é a fonte de verdade das convenções e da forma de trabalho.
 
@@ -48,3 +50,23 @@ Python 3.11+ (3.14 em uso). `python -m venv .venv`, `.venv\Scripts\pip install -
 Esqueleto de pastas montado, **todas as caixas vazias**. Regras da banca transcritas em `docs/regras_banca.md`; planilha histórica recebida em `data/raw/`, ainda não lida por código.
 
 Próximo passo combinado: nenhum até definição conjunta.
+
+# Funções canônicas (uma por andar)
+
+| Função | Andar | O que devolve |
+|---|---|---|
+| `diagnosticar_cliente` | 2 | Entender o cliente a partir dos números e identificar incoerências nos números |
+| `diagnosticar_patrimonio` | 3 | quanto o cliente pode gastar por ano, na perpetuidade, identificar o perfil de risco e alocação de cada familiar |
+| `alocar_carteiras` | 4 | as carteiras, por classe, com o risco de cada uma |
+| `defender_recomendacao` | 5 | reaplicar a tese sob contestação, diferentes premissas e afirmações incorretas |
+| `montar_apresentacao` | 6 | montar apresentação de slides apresentando o trabalho feito nos outros andares |
+| `case_surpresa` | 7 | aplicar o método diante de um case novo |
+
+Toda resposta é um único objeto JSON com `texto`, `fontes` e `confianca` — os
+andares 2 a 7 exigem, além disso, os campos tipados do schema de cada andar.
+
+## Pipeline da apresentação
+Gerada de forma autônoma pelo agente, sem edição humana, seguindo estritamente a seguinte sequência:
+1. **Consolidação dos Dados:** O agente reúne o diagnóstico patrimonial, as inconsistências identificadas e a alocação de portfólio calculada.
+2. **Geração de Outline:** Estrutura os tópicos dos slides de forma lógica (Contexto do Cliente -> Diagnóstico de Riscos -> Tese de Alocação -> Justificativa Técnica).
+3. **Renderização e Exportação:** O conteúdo estruturado é convertido e entregue em formato PDF final, contendo a argumentação completa e detalhada da tese de investimentos.
